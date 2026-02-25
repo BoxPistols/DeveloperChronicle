@@ -369,7 +369,7 @@ function generateSvg(opts: {
   const zennSummaryH = hasZenn ? 46 : 0;
   const zennArticleRowH = 28;
   const zennArticlesH = hasZennArticles ? zenn!.articles.length * zennArticleRowH + 8 : 0;
-  const footerH = 12;
+  const footerH = 24;
   const totalH =
     headerH +
     summaryH +
