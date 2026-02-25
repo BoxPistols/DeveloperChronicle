@@ -497,14 +497,14 @@ function generateSvg(opts: {
     svg += `<text x="${PAD}" y="${ly + 12}" class="t acc" font-size="13" font-weight="600">Languages</text>`;
     ly += 28;
 
-    const barW = halfW - 80;
+    const barW = halfW - 140;
     langStats.forEach((lang) => {
       const color = LANG_COLORS[lang.name] || (dark ? "#8b949e" : "#6e7781");
       svg += `<rect x="${PAD}" y="${ly}" width="${barW}" height="10" rx="5" fill="${dark ? "#21262d" : "#eef1f5"}"/>`;
       const fillW = Math.max(6, (lang.percent / 100) * barW);
       svg += `<rect x="${PAD}" y="${ly}" width="${fillW}" height="10" rx="5" fill="${color}"/>`;
       svg += `<text x="${PAD + barW + 10}" y="${ly + 9}" class="t main" font-size="12">${esc(lang.name)}</text>`;
-      svg += `<text x="${PAD + halfW}" y="${ly + 9}" class="t sub" font-size="11" text-anchor="end">${lang.percent}%</text>`;
+      svg += `<text x="${PAD + halfW - 4}" y="${ly + 9}" class="t sub" font-size="11" text-anchor="end">${lang.percent}%</text>`;
       ly += langRowH;
     });
   }
